@@ -20,7 +20,6 @@ class HairStylist extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  // как называеться параметр так и называеться настройка
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     InkWell(
@@ -67,7 +66,7 @@ class HairStylist extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                             ),
-                         Row(
+                         const Row(
                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
@@ -114,7 +113,7 @@ class HairStylist extends StatelessWidget {
                               ),
                             ),
                             IconButton(onPressed: (){},
-                              icon: Icon(
+                              icon: const Icon(
                               Icons.email,
                               size: 20,
                               color: Color.fromARGB(255, 85, 58, 0),
@@ -147,7 +146,7 @@ class HairStylist extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                             ),
-                         Row(
+                         const Row(
                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
@@ -194,7 +193,7 @@ class HairStylist extends StatelessWidget {
                               ),
                             ),
                             IconButton(onPressed: (){},
-                              icon: Icon(
+                              icon: const Icon(
                               Icons.email,
                               size: 20,
                               color: Color.fromARGB(255, 85, 58, 0),
@@ -208,9 +207,9 @@ class HairStylist extends StatelessWidget {
                    ],
                 ),
                 const SizedBox(height: 20),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     Text(
                       "Schedule",
                       style: TextStyle(
@@ -242,8 +241,8 @@ class HairStylist extends StatelessWidget {
                            vertical: 12,
                            horizontal: 18,
                          ),
-                         child: Column(
-                           children: const [
+                         child: const Column(
+                           children: [
                              Text(
                                '11',
                                style: TextStyle(
@@ -267,8 +266,8 @@ class HairStylist extends StatelessWidget {
                             vertical: 12,
                             horizontal: 18,
                            ),
-                           child: Column(
-                            children: const [
+                           child: const Column(
+                            children: [
                               Text(
                                 '11',
                                 style: TextStyle(
@@ -320,8 +319,8 @@ class HairStylist extends StatelessWidget {
                           vertical: 12,
                           horizontal: 18,
                         ),
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Text(
                               '11',
                               style: TextStyle(
@@ -344,8 +343,8 @@ class HairStylist extends StatelessWidget {
                           vertical: 12,
                           horizontal: 18,
                         ),
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Text(
                               '11',
                               style: TextStyle(
@@ -368,8 +367,8 @@ class HairStylist extends StatelessWidget {
                           vertical: 12,
                           horizontal: 18,
                         ),
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Text(
                               '11',
                               style: TextStyle(
@@ -449,4 +448,3 @@ class HairStylist extends StatelessWidget {
     );
   }
 }
-
