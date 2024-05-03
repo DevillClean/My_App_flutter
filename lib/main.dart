@@ -1,34 +1,70 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/settings.dart';
+import 'package:flutter_application_1/pages/settings_sound.dart';
+import 'package:flutter_application_1/pages/settings_theme.dart';
+import 'package:provider/provider.dart';
+
 
 void main() {
-  runApp(const HairStylist());
+  runApp(
+    // MultiProvider(
+    //   providers: [
+    //   Provider(
+    //     create: (context) => SearchBloc(),
+    //    ),
+    //  ],
+    //  child:
+       MaterialApp(
+     debugShowCheckedModeBanner: false,
+    //  theme: ThemeData(
+      // textTheme: const TextTheme(
+      //   bodyText2: TextStyle(fontSize: 33),
+      //     subtitle1: TextStyle(fontSize: 22),
+      // )
+    // ),
+     initialRoute: '/',
+     routes: {
+         '/': (context) => const HairStylist(),
+         '/settings': (context) => const Settings(),
+         '/settings_sound': (context) => const SettingsSound(),
+         '/settings_theme': (context) => SettingsTheme(),
+      },
+     ),
+    );
+  // );
 }
+
+
 
 class HairStylist extends StatelessWidget {
   const HairStylist({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-     debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         backgroundColor: Color.fromARGB(255, 245, 242, 233),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    InkWell(
-                      onTap: () {},
-                      child: const Icon(Icons.arrow_back_ios),
+                  IconButton(
+                    onPressed: (){}, 
+                    icon: const Icon(Icons.search),
                     ),
                     IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.search_rounded),
+                      onPressed: () {
+                        Navigator.push(
+                    context, MaterialPageRoute(
+                      builder: (context){
+                         return const Settings();
+                  }));
+                      },
+                      icon: const Icon(Icons.settings),
                     ),
                   ],
                 ),
@@ -396,7 +432,7 @@ class HairStylist extends StatelessWidget {
                   spacing: 10,
                   children: [
                     Container(
-                      width: 180,
+                      width: 170,
                       height: 40,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
@@ -412,7 +448,7 @@ class HairStylist extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: 180,
+                      width: 170,
                       height: 40,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
@@ -421,7 +457,7 @@ class HairStylist extends StatelessWidget {
                       child: const Center(child: Text('9am-10am')),
                     ),
                     Container(
-                      width: 180,
+                      width: 170,
                       height: 40,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
@@ -430,7 +466,7 @@ class HairStylist extends StatelessWidget {
                       child: const Center(child: Text('9am-10am')),
                     ),
                     Container(
-                      width: 180,
+                      width: 170,
                       height: 40,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
@@ -444,7 +480,7 @@ class HairStylist extends StatelessWidget {
             ),
           )
         ),
-      )
     );
   }
 }
+

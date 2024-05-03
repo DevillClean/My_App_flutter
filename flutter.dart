@@ -99,8 +99,6 @@ super.dispose()
 
 
 
-
-
 1. Виджет рождаеться - на этом этапе мы ничего не делаем 
 2. вызываеться у виджета CreateState  -  как правило мы тут тоже ничего не делаем
 3. State получает context - нужно понимать что до этого момента с ним ничего не делать 
@@ -124,18 +122,65 @@ super.dispose()
                                                               inheritWidget(включая блок)
 
 
+*/
 
-что значит изменяеться виджет?
+/* =========== типы Состояний State 
 
+       Ephemeral State                  Application State
+    (локальное состояние)             (Глобальное состояние)
+    
+    setState() (Vanilla)                  Inherit widget
+                                           Scoped Model
+                                             Provider
+                                              Redux
+                                              MobX
+
+*/
+
+/* =========== Bloc
+    это библиотека которая помогает управляиь состоянием
+
+    Блок позволяет легко отделить презентационный слой от бизнес-логики ,
+    делая ваш код более быстрым, простым для тестирования и переиспользуемым
+    
+
+                         BLoc - Business Logic Component
+
+
+      Flutter App                        Bloc
+                  -----------> Events 
+                  States <-----------
+
+
+  Механизм работы Color Block
+  1. когда мы нажимаем на кнопку , мы наше событие должны добавить и отправить в поток
+  2. для того что бы отправить собитыя или поток в поток стрим нужно реализовать StreamController который позволяет моделировать этот поток данных 
 
 
 
 */
 
-/* Верстка
+
+
+/*============= Верстка
+
+            Видимые и невидимые виджеты
+ layaut widgets                   
+
+    Padding 			
+    Align
+    Center
+    Container
+    Transform
+    Baseline
+    AspectRatio
+    SizedBox
+    SafeArea
+
   
   mainAxisAlingment : mainAxisAlingment.(параметры разметки)
   crossAxisAlignment: CrossAxisAlignment.(параметры разметки по линии)
+  
 
   padding: - это отступ внутри
   margin - это внешний отступ между элементами
@@ -143,9 +188,10 @@ super.dispose()
    home: Scaffold(
         backgroundColor: Colors.blue, (изменение заднего фона)
 
-
+  
 
 ============================== Stack - это тот виджет который может накладывать друг на друга элементы
+
   Stack(
      children: [
       Padding(padding: const EdgeInsets.all(3.0),
@@ -204,6 +250,7 @@ super.dispose()
 */
 
 
+
 /* Кнопки
 
  children: [
@@ -211,12 +258,7 @@ super.dispose()
       onPressed: () {},
       icon: const Icon(Icons.arrow_back_ios_new_rounded),
     ),
-    IconButton(
-      onPressed: () {},
-      icon: const Icon(Icons.search_rounded),
-    ),
   ],
-
   children: [
     InkWell(
       onTap: () {},
@@ -224,11 +266,20 @@ super.dispose()
     )
   ]
 
-  
+  floatActionButton: Row(
+    mainAxisActionButton: MainAxisActionButton.end.
+    childer: <Widget> [
+        FloatingActionButton(
+          backgroundColor: Colors.red,
+          onPressed: (),
+      )
+    ]
+  )
+  HeroError - говорит о том что нужен уникальный едентификатор для кнопки 
+  heroTag: null,
 */
 
 /* Контекст
-
 
  context.findAncessorStateFindOfType<_DirectorState>()?.vydatZarplatuKasiru(); - найти состоиние какого типа? указываем тип 
                                                          какой ближайший вверху ?  
@@ -241,7 +292,6 @@ super.dispose()
 
 !!! чем больше виджетов в иерархии тем медленее они будут работать 
 */
-
 
 /* Провайдер
 
